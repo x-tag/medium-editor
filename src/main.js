@@ -47,6 +47,15 @@
           this.xtag.editor.setContent(val);
         }
       }
+    },
+    events: {
+      focus: function(){
+        this.xtag.state = this.value;
+      },
+      blur: function(){
+        if (this.xtag.state != this.value) xtag.fireEvent(this, 'change');
+        this.xtag.state = null;
+      }
     }
   });
 
