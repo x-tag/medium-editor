@@ -4,10 +4,20 @@
   var camelArgs = [/-([a-z])/g, function(match, letter){ return letter.toUpperCase() }];
   var defaultButtons = ['bold', 'italic', 'underline', 'anchor', 'h3', 'unorderedlist', 'orderedlist'];
 
+  function initialize(node){
+    if (node.xtag.editor) node.xtag.editor.destroy();
+    node.xtag.editor = new MediumEditor(node, xtag.merge({
+      spellcheck: node.spellcheck,
+      toolbar:{
+        buttons: node.xtag.buttons || defaultButtons
+      }
+    }, node.xtag.options || {}));
+  }
+
   xtag.register('x-medium-editor', {
     lifecycle: {
       created: function() {
-        this.setup();
+        initialize(this);
       }
     },
     accessors: {
@@ -28,16 +38,14 @@
             options[match.replace.apply(match, camelArgs)] = true;
           });
         }
-      }
-    },
-    methods: {
-      setup: function(obj){
-        this.xtag.editor = new MediumEditor(this, xtag.merge({
-          spellcheck: this.spellcheck,
-          toolbar:{
-            buttons: this.xtag.buttons || defaultButtons
-          }
-        }, this.xtag.options || {}));
+      },
+      value: {
+        get: function(){
+          return this.innerHTML;
+        },
+        set: function(val){
+          this.innerHTML = val;
+        }
       }
     }
   });
