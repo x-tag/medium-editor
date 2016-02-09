@@ -44,7 +44,7 @@
           return this.innerHTML;
         },
         set: function(val){
-          this.innerHTML = val;
+          this.xtag.editor.setContent(val);
         }
       }
     }
