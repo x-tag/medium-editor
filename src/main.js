@@ -18,7 +18,7 @@
     content: '<section></section>',
     lifecycle: {
       created: function() {
-        this.xtag.content = node.querySelector('section');
+        this.xtag.content = this.querySelector('section');
         initialize(this);
       }
     },
