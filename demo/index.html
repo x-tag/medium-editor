@@ -20,14 +20,16 @@
 
   <x-medium-editor id="test" options="auto-link target-blank"></x-medium-editor>
 
+  <div id="test_default"></div>
 </body>
 
 <script>
-// xtag.addEvents(test, {
-//   focus: function(e){
-//     console.log(e);
-//   }
-// });
+new MediumEditor(test_default, {
+  spellcheck: false,
+  toolbar:{
+    buttons: ['bold', 'italic', 'underline', 'anchor', 'h3', 'unorderedlist', 'orderedlist']
+  }
+});
 </script>
 
 </html>

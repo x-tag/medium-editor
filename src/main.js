@@ -6,7 +6,7 @@
 
   function initialize(node){
     if (node.xtag.editor) node.xtag.editor.destroy();
-    node.xtag.editor = new MediumEditor(node, xtag.merge({
+    node.xtag.editor = new MediumEditor(node.xtag.content, xtag.merge({
       spellcheck: node.spellcheck,
       toolbar:{
         buttons: node.xtag.buttons || defaultButtons
@@ -15,8 +15,10 @@
   }
 
   xtag.register('x-medium-editor', {
+    content: '<section></section>',
     lifecycle: {
       created: function() {
+        this.xtag.content = node.querySelector('section');
         initialize(this);
       }
     },
@@ -41,7 +43,7 @@
       },
       value: {
         get: function(){
-          return this.innerHTML;
+          return this.xtag.content.innerHTML;
         },
         set: function(val){
           this.xtag.editor.setContent(val);
