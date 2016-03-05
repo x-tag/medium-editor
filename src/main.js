@@ -41,6 +41,9 @@
           });
         }
       },
+      name: {
+        attribute: {}
+      },
       value: {
         get: function(){
           return this.xtag.content.innerHTML;
