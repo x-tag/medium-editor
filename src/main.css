@@ -1,11 +1,20 @@
 
 x-medium-editor {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 x-medium-editor > div {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
   flex: 1;
+  -ms-flex: auto;
 }
 
 x-medium-editor > div > *:first-child {
