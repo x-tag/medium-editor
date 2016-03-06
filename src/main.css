@@ -15,6 +15,7 @@ x-medium-editor > div {
   -webkit-flex: 1;
   flex: 1;
   -ms-flex: auto;
+  cursor: text;
 }
 
 x-medium-editor > div > *:first-child {
