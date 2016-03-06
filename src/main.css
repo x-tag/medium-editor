@@ -1,12 +1,11 @@
 
 x-medium-editor {
-  display: table;
-  width: 100%;
+  display: flex;
   box-sizing: border-box;
 }
 
 x-medium-editor > div {
-  display: table-cell;
+  flex: 1;
 }
 
 x-medium-editor > div > *:first-child {
