@@ -1,6 +1,20 @@
 
 x-medium-editor {
-  display: block;
+  display: table;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+x-medium-editor > div {
+  display: table-cell;
+}
+
+x-medium-editor > div > *:first-child {
+  margin-top: 0;
+}
+
+x-medium-editor > div > *:last-child {
+  margin-bottom: 0;
 }
 
 .medium-editor-toolbar li button {

@@ -15,10 +15,10 @@
   }
 
   xtag.register('x-medium-editor', {
-    content: '<section></section>',
+    content: '<div></div>',
     lifecycle: {
       created: function() {
-        this.xtag.content = this.querySelector('section');
+        this.xtag.content = this.querySelector('div');
         initialize(this);
       }
     },
