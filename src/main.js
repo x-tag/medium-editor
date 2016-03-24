@@ -49,7 +49,7 @@
           return this.xtag.content.innerHTML;
         },
         set: function(val){
-          this.xtag.editor.setContent(val);
+          this.xtag.editor.setContent(val || '');
         }
       }
     },
